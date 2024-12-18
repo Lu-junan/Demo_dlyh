@@ -327,7 +327,7 @@ hr{
 }
 
 .loc-info-ul li{
-    list-style-type: none;  /*移除默认的列表标记*/
+    list-style-type: none;  
     position: relative;     /*使 ::before伪元素相对于列表项定位*/
 }
 
