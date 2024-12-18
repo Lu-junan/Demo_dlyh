@@ -133,7 +133,7 @@ hr{
 }
 
 
-.check-stage{     /*不标注height参数以便灵活折叠*/
+.check-stage{     
     width: 800px;
 	/* height: 170px; */
 	margin: 20px auto;
