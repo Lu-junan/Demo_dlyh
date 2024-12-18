@@ -1,0 +1,570 @@
+@charset "utf-8";
+
+/*------容器设置-------*/
+
+body{
+    display: flex;
+    justify-content: center; /*水平居中*/
+    align-items: center;     /*垂直居中*/
+    min-height: 100vh;      
+    margin: 0;               
+}
+
+
+.page{
+    width: 800px;
+}
+
+.page-title{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    position: relative;
+}
+
+.cont{
+    /* height: 1200px; */
+    width: 800px;
+	background-color: rgb(41, 57, 79);
+    border-radius: 3px;  
+	position: relative;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.close-btn{
+    width: 30px;
+    height: 30px;
+    position: absolute;   
+    top: 8px;          
+    right: 10px;  
+    background-color: transparent;  
+    font-size: 30px;   
+    color: white;
+    border: none;
+    cursor: pointer; 
+}
+
+
+/*-------总体布局-------*/
+
+.title{
+    color: rgb(105, 173, 211);
+	padding-top: 15px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 17px;
+}
+
+hr{
+	padding-top: 0px;
+    border: 1px solid rgb(56, 71, 91);
+}
+
+.box-info{
+    width: 748px;
+    margin: auto auto;
+}
+
+.box-basic-info{
+    margin: 20px auto;
+    border: 3px solid transparent; /*初始边框透明*/
+    transition: border-color 0.3s; /*添加过渡效果*/
+    border-radius: 3px;
+}
+
+.basic-info{
+    width: 748px;
+	height: 300px;
+	margin: auto auto;
+	position: relative;
+    background: linear-gradient(to right, rgb(255, 255, 255, 0.2), rgb(255, 255, 255, 0));  /*设置背景渐变*/
+    border-radius: 3px;
+}
+
+.box-basic-info.highlight{
+    border-color: rgb(13, 153, 255); 
+}
+
+.box-loc-info{
+    margin: 20px auto;
+    border: 3px solid transparent; /*默认状态隐藏*/
+    transition: border-color 0.3s; /*过渡效果*/
+    border-radius: 3px;
+}
+
+.loc-info{
+    width: 748px;
+	height: 173px;
+	margin: auto auto;
+	position: relative;
+    background: linear-gradient(to right, rgb(255, 255, 255, 0.2), rgb(255, 255, 255, 0));
+    border-radius: 3px;
+}
+
+.box-loc-info.highlight{
+    border-color: rgb(13, 153, 255);  
+}
+
+
+.box-proc-info{
+    margin: 20px auto;
+    border: 3px solid transparent; 
+    transition: border-color 0.3s; 
+    border-radius: 3px;
+}
+
+.proc-info{
+    width: 748px;
+	height: 147px;
+	margin: auto auto;
+	position: relative;
+    background: linear-gradient(to right, rgb(255, 255, 255, 0.2), rgb(255, 255, 255, 0));
+    border-radius: 3px;
+}
+
+.box-proc-info.highlight{
+    border-color: rgb(13, 153, 255);   
+}
+
+.box-stage{     /*不标注height参数以灵活折叠*/
+    /* height: 570px; */
+    width: 800px;
+    background-color: rgb(70, 95, 128);
+}
+
+
+.check-stage{     /*不标注height参数以便灵活折叠*/
+    width: 800px;
+	/* height: 170px; */
+	margin: 20px auto;
+	position: relative;
+}
+
+#stage-ul1{
+    width:800;
+    height: 150px;
+}
+
+.rec-stage{
+    width: 800px;
+	/* height: 170px; */
+	margin: 20px auto;
+	position: relative;
+}
+
+#stage-ul2{
+    width:800;
+    height: 150px;
+}
+
+.comp-stage{
+    width: 800px;
+	/* height: 170px; */
+	margin: 20px auto;
+	position: relative;
+}
+
+#stage-ul3{
+    width:800;
+    height: 150px;
+}
+
+.box-stage>div>div>ul{
+    list-style: none;
+}
+
+.info-icon{
+    height: 20px;
+    width: 18px; 
+}
+
+
+/*-------1.信息部分-------*/
+
+.info-title{
+    margin-left: 30px;
+    padding-top: 15px;
+}
+
+.sub-title1{
+    margin-left: 5px;
+    font-size: 16px;
+    color: rgb(126, 212, 255);
+}
+
+/*-------1.1基础信息*/
+
+.line1{
+    height: 300px;
+    float: left;
+}
+
+.basic-info-ul{
+    margin: 0px auto;
+    height: 250px;
+    width: 740px;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+.basic-info1, .basic-info3{
+    margin-left: 70px;
+}
+
+.basic-info3{
+    float: left;  
+}
+
+#zlsj-title{
+    float: left;
+}
+
+.basic-info1, .basic-info2{
+    float: left;  
+    padding-right: 100px;
+}
+
+
+.basic-info-ul>div>li{
+    margin-top: 17px;
+}
+
+.basic-info-ul li{
+    list-style-type: none;  
+    position: relative;     /*使 ::before伪元素相对于列表项定位*/
+}
+
+.basic-info-ul li::before{
+    content: "•";       /*自定义标记符号*/
+    position: absolute;
+    left: -1.2em;     
+    color: rgb(80, 169, 216);
+    text-shadow: 
+        0 0 5px rgba(80, 169, 216, 0.8),
+        0 0 10px rgba(80, 169, 216, 0.6),
+        0 0 15px rgba(80, 169, 216, 0.4),
+        0 0 20px rgba(80, 169, 216, 0.2);
+}
+
+.basic-info3 li::before{   
+    top: 9px;
+}
+
+
+.zlsj-mark{
+    width: 25px;
+    height: 25px;
+    float: left;
+    opacity: 0.5;
+}
+
+.zlsj-txt{
+    width: 70px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.zlsj-txt-stage{
+    font-size: 13px;
+}
+
+.zlsj-txt-date{
+    font-size: 12px;
+    color: rgb(69, 171, 255);
+}
+
+
+.zlsj-line{
+    float: left;
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+
+.div-zlsj{
+    display: flex;
+    align-items: center;     /*垂直居中*/
+}
+
+/*-------1.2位置信息*/
+
+.line2{
+    height: 173px;
+    float: left;
+}
+
+.loc-info-ul{
+    margin: 0px auto;
+    height: 147px;
+    width: 740px;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+.loc-info1{
+    margin-left: 80px;
+}
+
+.loc-info2{
+    margin-left: 80px;
+    float: left;  
+}
+
+.loc-info3, .loc-info4{
+    margin-left: 65px;
+    float: left;  
+}
+
+.loc-info-ul>div>li{
+    padding-top: 17px;
+}
+
+.loc-info-ul li{
+    list-style-type: none;  /*移除默认的列表标记*/
+    position: relative;     /*使 ::before伪元素相对于列表项定位*/
+}
+
+.loc-info-ul li::before{
+    content: "•";       
+    position: absolute;
+    left: -1.2em;      
+    color: rgb(80, 169, 216);
+    text-shadow: 
+        0 0 5px rgba(80, 169, 216, 0.8),
+        0 0 10px rgba(80, 169, 216, 0.6),
+        0 0 15px rgba(80, 169, 216, 0.4),
+        0 0 20px rgba(80, 169, 216, 0.2);
+}
+
+/*-------1.3处理信息*/
+
+.line3{
+    height: 147px;
+    float: left;
+}
+
+.proc-info-ul{
+    margin: 0px auto;
+    height: 130px;
+    width: 680px;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+.proc-info-ul>li{
+    float: left;  
+    margin-left: 80px;
+    padding-top: 17px;
+}
+
+.proc-info-ul li{
+    list-style-type: none;  /*移除默认的列表标记*/
+    position: relative;     /*使::before伪元素相对于列表项定位*/
+}
+
+.proc-info-ul li::before{
+    content: "•";      
+    position: absolute;
+    left: -1.2em;      
+    color: rgb(80, 169, 216);
+    text-shadow: 
+        0 0 5px rgba(80, 169, 216, 0.8),
+        0 0 10px rgba(80, 169, 216, 0.6),
+        0 0 15px rgba(80, 169, 216, 0.4),
+        0 0 20px rgba(80, 169, 216, 0.2);
+}
+
+
+/*-------2.阶段部分-------*/
+
+.sub-title2{
+    height: 28px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 10px;
+    background-color: rgb(43, 78, 125);
+    border-bottom: 2px solid rgb(76, 124, 172); /* 2像素宽的黑色下边界 */
+}
+
+
+.flod-icon{
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.stage-ul-class1{
+    height: 120px;
+    width: 700px;
+    display: block;
+}
+
+.stage-ul-class2{
+    height: 120px;
+    width: 700px;
+    display: none;
+}
+
+.doc-file{
+    cursor: pointer;
+}
+
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;        /*去掉超链接下划线*/
+}
+
+.doc-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.stage-img{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding-left: 5px;  
+}
+
+.modal{                 /*图片弹窗*/
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-image{
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto;
+    margin-top: 300px;
+}
+
+.popup{                /*视频弹窗*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup video{
+    position: absolute;
+    top: 50%;       /*将上边缘和左边缘分别移动到其父元素的垂直和水平中心位置*/
+    left: 50%;
+    transform: translate(-50%, -50%);  /*将元素向左和向上各移动自身宽度和高度的50%，实现真正的居中*/
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.video_icon{        
+    cursor: pointer;
+    width: 25px; 
+    height: 25px;
+    border: 2px solid #ccc; 
+}
+
+.close-button{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-button:hover{
+    background-color: rgb(100, 100, 100);
+}
+
+
+/*-------2.1排查阶段*/
+
+.check-stage-ul{
+    margin: 0px auto;
+    height: 120px;
+    line-height: 50px;
+    width: 700px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+
+.check-stage-ul>div{
+    float: left;  
+    margin-left: 20px;
+}
+
+.check-stage-ul>div>li{
+    padding-left: 90px;
+}
+
+/*-------2.2整改阶段*/
+
+.rec-stage-ul{
+    margin: 0px auto;
+    height: 120px;
+    line-height: 50px;
+    width: 700px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+
+.rec-stage-ul>div{
+    float: left;  
+    margin-left: 20px;
+}
+
+.rec-stage-ul>div>li{
+    padding-left: 90px;
+}
+/*-------2.3完成阶段*/
+
+.comp-stage-ul{
+    margin: 0px auto;
+    height: 120px;
+    line-height: 50px;
+    width: 700px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+
+.comp-stage-ul>div{
+    float: left;  
+    margin-left: 20px;
+}
+
+.comp-stage-ul>div>li{
+    padding-left: 90px;
+}
+
+
+
